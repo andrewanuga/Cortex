@@ -158,3 +158,157 @@
 .smooth-bg {
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #2c3e50 100%);
 }
+
+/* Loader */
+.ai-loader {
+    width: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.loading-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.3s; }
+.dot:nth-child(2) { animation-delay: -0.1s; }
+.dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(2);
+    }
+    40% {
+        transform: scale(3);
+    }
+}
+
+
+/* Typing Effect */
+.typing-effect-container {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #333;
+  max-width: 100%;
+}
+
+.text-container {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.typing-text {
+  min-height: 20px;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: #64ffda;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.copy-button {
+  background: #64ffda;
+  color: #1e1e1e;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-button:hover:not(:disabled) {
+  background: #4fd3b0;
+  transform: translateY(-1px);
+}
+
+.copy-button:disabled {
+  cursor: not-allowed;
+}
+
+.copy-button.success {
+  background: #4caf50;
+  color: white;
+}
+
+.copy-button.error {
+  background: #f44336;
+  color: white;
+}
+
+/* Scrollbar styling */
+.text-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.text-container::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 3px;
+}
+
+.text-container::-webkit-scrollbar-thumb {
+  background: #64ffda;
+  border-radius: 3px;
+}
+
+.text-container::-webkit-scrollbar-thumb:hover {
+  background: #4fd3b0;
+}
+
+.webkit-green {
+
+}
+
+.webkit-green::-webkit-scrollbar {
+  width: 8px;
+}
+
+.webkit-green::-webkit-scrollbar-track {
+  background-color: transparent; /* green-500 */
+  border-radius: 10px;
+}
+
+.webkit-green::-webkit-scrollbar-thumb {
+  background-color: #16a34a; /* green-600 */
+  border-radius: 10px;
+}
+
+.webkit-green::-webkit-scrollbar-thumb:hover {
+  background-color: #15803d; /* green-700 */
+}

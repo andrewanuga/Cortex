@@ -2,6 +2,7 @@
     "manifest_version": 3,
     "name": "Cortex",
     "version": "1.0.0",
+     "host_permissions": ["<all_urls>"],
     "description": "The Extension that is working with the browser for easiness",
     "icons": {
     "16": "./logo.png"
@@ -16,10 +17,15 @@
         "default_title": "Open Cortex Side Panel"
     },
     "permissions": [
-        "sidePanel"
+        "sidePanel",
+        "tabs",
+        "scripting",
+        "activeTab",
+        "storage"
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
     "commands": {
         "_execute_action": {
@@ -30,5 +36,4 @@
             "description": "Toggle the side panel"
         }
     }
-    // run npm run build to generate the dist file
 }

@@ -1,5 +1,6 @@
-// Enable side panel when extension icon is clicked
+import summarize from "./summarize.js"
 
+// Enable side panel when extension icon is clicked
 const GOOGLE_ORIGIN = 'https://www.google.com';
 
 chrome.sidePanel
@@ -31,19 +32,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, info, tab) => {
   }
 });
 
+console.log("Background script running");
+summarize()
 
-// // Create context menu item
-// chrome.runtime.onInstalled.addListener(() => {
-//   chrome.contextMenus.create({
-//     id: 'openSidePanel',
-//     title: 'Open Cortex Side Panel',
-//     contexts: ['all']
-//   });
-// });
 
-// // Handle context menu clicks
-// chrome.contextMenus.onClicked.addListener((info, tab) => {
-//   if (info.menuItemId === 'openSidePanel') {
-//     chrome.sidePanel.open({ windowId: tab.windowId });
-//   }
-// });
